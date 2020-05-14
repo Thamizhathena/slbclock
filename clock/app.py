@@ -29,5 +29,5 @@ def home():
         answer = Clock_Angle(hour, minutes).calAngle()
     return render_template("Home.html", pageData=str(answer))
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+if __name__ == '__main__':
+     APP.run(host='0.0.0.0', debug=True)
