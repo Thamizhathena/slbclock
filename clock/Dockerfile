@@ -8,7 +8,7 @@ COPY . /app
 
 RUN pip3 --no-cache-dir install -r req.txt
 
-RUN pylint main.py
+RUN pylint app.py
 RUN pytest test_cases.py
 
 EXPOSE 5000
