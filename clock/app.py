@@ -30,4 +30,4 @@ def home():
     return render_template("Home.html", pageData=str(answer))
 
 if __name__ == '__main__':
-     APP.run(host='0.0.0.0', debug=True)
+     app.run(host='0.0.0.0', debug=True)
