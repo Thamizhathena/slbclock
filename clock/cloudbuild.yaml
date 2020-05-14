@@ -1,10 +1,10 @@
  steps:
  # build the container image
  - name: 'gcr.io/cloud-builders/docker'
-   args: ['build', '-t', 'gcr.io/ind-coe/clock-tam', '.']
+   args: ['build', '-t', 'gcr.io/ind-coe/clock-tam:$COMMIT_SHA', '.']
  # push the container image to Container Registry
  - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 'gcr.io/ind-coe/clock-tam']
+   args: ['push', 'gcr.io/ind-coe/clock-tam:$COMMIT_SHA']
  # Deploy container image to Cloud Run
  - name: 'gcr.io/cloud-builders/gcloud'
    args:
@@ -12,7 +12,7 @@
    - 'deploy'
    - 'clock-tam'
    - '--image'
-   - 'gcr.io/ind-coe/clock-tam'
+   - 'gcr.io/ind-coe/clock-tam:$COMMIT_SHA'
    - '--region'
    - 'us-central1'
    - '--platform'
