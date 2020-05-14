@@ -1,9 +1,9 @@
 """
 code for calculate angle
 """
+import os
 from flask import Flask, render_template, request
 from clock import Clock_Angle
-import os
 app = Flask(__name__)
 
 @app.after_request
